@@ -1,0 +1,41 @@
+{
+  "name": "japanese-to-english",
+  "displayName": "Japanese to English Translator",
+  "description": "Select Japanese text and translate it to English",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "japanese-to-english.translate",
+        "title": "Translate Japanese to English"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "japanese-to-english.translate",
+          "when": "editorHasSelection",
+          "group": "1_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
